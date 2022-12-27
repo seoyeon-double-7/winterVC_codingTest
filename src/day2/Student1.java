@@ -21,14 +21,6 @@ public class Student1 implements  Comparable<Student1>{
         return score;
     }
 
-    public void setName(String name){
-        this.name = name;
-    }
-
-    public void setScore(int score){
-        this.score = score;
-    }
-
 
     @Override
     public int compareTo(Student1 o) {
