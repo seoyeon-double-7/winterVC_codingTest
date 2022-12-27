@@ -23,5 +23,8 @@ public class ArrayAverage {
                 .average()
                 .orElse(0);
         System.out.println("스트림 이용 : "+answer);
+
+
+
     }
 }
