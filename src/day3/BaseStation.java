@@ -52,15 +52,22 @@ class solution {
         while (position <= n) {
 
             // 1 기존에 기지국이 설치가 되어 있는 경우 => 전파를 받을 수 있는 아파트 최소 범위값보다
+            // 다음기지국을 설치할 수 있는 여부를 체크
             if(index < stations.length && stations[index]-w <= position){
-                position = stations[index] + w + 1;
+                position = stations[index] + w + 1; // 건너뛰기
                 index++;
+                // index = 0; stations[0]-w <= positions // 3 <= 3
+                // position = stations[0]+1+1; ==> 6
+                // index = 1; stations[1]-w <= position
+
             }
 
             // 2 새롭게 설치하는 경우
             else{
                 answer++;   // 기지국 새롭게 설치
-                position += 2*w+1;  // 전파범위 => 기지국의 왼족, 오른족 부분의 범위
+                position += able;  // 전파범위 => 기지국의 왼족, 오른족 부분의 범위
+                // position 변경 ==> 기지국의 위치 2*1+1 => 3
+                // positipn 변경 ==> 6번일 때
             }
 
         }
@@ -77,9 +84,9 @@ public class BaseStation {
 
     public static void main(String args[]){
 
-        int n=16;
-        int stations[] = {9};
-        int w=2;
+        int n=11;
+        int stations[] = {4,11};
+        int w=1;
 
         System.out.println(solution.solution(n, stations, w));
 
